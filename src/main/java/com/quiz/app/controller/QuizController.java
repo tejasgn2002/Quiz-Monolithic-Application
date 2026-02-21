@@ -39,7 +39,7 @@ public class QuizController {
 		return ResponseEntity.ok(service.getQuizQuestions(id));
 	}
 	
-	@GetMapping("submit/{id}")
+	@PostMapping("submit/{id}")
 	public ResponseEntity<Integer> submitedQuiz(@PathVariable Integer id,@RequestBody List<SubmitResponseDto> submitReponseDto){
 		return ResponseEntity.ok(service.submitedQuiz(id,submitReponseDto));
 	}

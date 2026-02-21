@@ -35,7 +35,7 @@ public class QuestionController {
 		return ResponseEntity.status(HttpStatus.OK).body(service.fetchAllQuestionsByCategory(category));
 	}
 	
-	@PostMapping("addQuestion")
+	@PostMapping("add")
 	public ResponseEntity<Question> addQuestion(@RequestBody QuestionDto questionDto){
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.addQuestion(questionDto));
 	}
