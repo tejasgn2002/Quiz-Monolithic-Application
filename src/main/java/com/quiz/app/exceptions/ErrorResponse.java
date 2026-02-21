@@ -1,11 +1,15 @@
 package com.quiz.app.exceptions;
 
 import java.time.LocalDateTime;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ErrorResponse {
-
-	public ErrorResponse(int value, String message, LocalDateTime now) {
-		
+	public static Map<String,Object> response(Integer status,String message){
+		Map<String,Object> errorMessage = new TreeMap<String, Object>();
+		errorMessage.put("status", status);
+		errorMessage.put("error", message);
+		errorMessage.put("timestamp", LocalDateTime.now());
+		return errorMessage;
 	}
-
 }
